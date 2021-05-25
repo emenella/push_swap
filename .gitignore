@@ -1,0 +1,7 @@
+checker
+push_swap
+*.o
+*.a
+*.dylib
+.DS_Store
+a.out
