@@ -28,14 +28,24 @@ void	sort_3(t_slack *a)
 
 void	sort_5(t_slack *a, t_slack *b)
 {
-	push_min_to_b(a);
-	pb(a, b);
-	push_max_to_b(a);
-	pb(a, b);
-	sort_3(a);
-	pa(a, b);
-	ra(a);
-	pa(a, b);
+	if (a->size == 5) 
+	{
+		push_min_to_b(a);
+		pb(a, b);
+		push_max_to_b(a);
+		pb(a, b);
+		sort_3(a);
+		pa(a, b);
+		ra(a);
+		pa(a, b);
+	}
+	if (a->size == 4) 
+	{
+		push_min_to_b(a);
+		pb(a, b);
+		sort_3(a);
+		pa(a, b);
+	}
 }
 
 int	push_chunk(int chunk, int size, t_slack *a, t_slack *b)

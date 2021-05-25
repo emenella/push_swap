@@ -20,20 +20,38 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 	return (a);
 }
 
+int	ft_is_ok(t_slack *a)
+{
+	int		i;
+	t_list	*lst;
+
+	i = -1;
+	lst = a->lst;
+	while (++i < a->size - 1)
+	{
+		if (lst->content >= lst->next->content)
+		{
+			return (1);
+		}
+		lst = lst->next;
+	}
+	return (0);
+}
+
 int	main(int argc, char **arg)
 {
 	t_slack	*a;
 	t_slack	*b;
 
 	a = ft_arg_to_slack(arg, argc);
-	if (a != NULL)
+	if (a != NULL && ft_is_ok(a))
 	{
 		b = ft_init_slack(0);
 		if (a->size >= 500)
 			sort_500(a, b);
 		else if (a->size > 5)
 			sort_100(a, b);
-		else if (a->size == 5)
+		else if (a->size <= 4)
 			sort_5(a, b);
 		else if (a->size == 3)
 			sort_3(a);
