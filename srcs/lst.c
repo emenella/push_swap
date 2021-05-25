@@ -10,15 +10,20 @@ int	ft_lstadd_back(t_list **alst, t_list *new)
 		if (lst->content == new->content)
 		{
 			free(new);
-			return (0);
+			return (1);
 		}
 		lst = lst->next;
 	}
 	if (lst == NULL)
 		*alst = new;
-	else
+	else if (lst->content != new->content)
 		lst->next = new;
-	return (1);
+	else
+	{
+		free(new);
+		return (1);
+	}
+	return (0);
 }
 
 void	ft_lstadd_front(t_list **alst, t_list *new)

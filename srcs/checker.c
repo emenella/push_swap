@@ -12,17 +12,9 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 	{
 		y = -1;
 		while (y++ && arg[i][y] && !ft_isdigit(arg[i][y]))
-		{
-			ft_listfree(a->lst);
-			free(a);
-			write(1, "Error\n", 6);
-			return (NULL);
-		}
-		if (ft_lstadd_back(&a->lst, ft_lstnew(ft_atoi(arg[i]))) == 0)
-		{
-			write(1, "Error\n", 6);
-			return (NULL);
-		}
+			return (ft_exit(a));
+		if (ft_lstadd_back(&a->lst, ft_lstnew(ft_atoi(arg[i]))))
+			return (ft_exit(a));
 		a->size++;
 	}
 	return (a);
@@ -91,7 +83,7 @@ int	main(int argc, char **arg)
 
 	a = ft_arg_to_slack(arg, argc);
 	cmd = NULL;
-	if (a != NULL)
+	if (a != NULL && argc > 1)
 	{
 		b = ft_init_slack(0);
 		cmd = ft_read_cmd();

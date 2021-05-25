@@ -72,4 +72,5 @@ void	sort_3(t_slack *a);
 void	sort_5(t_slack *a, t_slack *b);
 void	sort_100(t_slack *a, t_slack *b);
 void	sort_500(t_slack *a, t_slack *b);
+void	*ft_exit(t_slack *a);
 #endif

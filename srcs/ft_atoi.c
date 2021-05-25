@@ -45,3 +45,11 @@ int	ft_atoi(const char *nptr)
 		result = -result;
 	return (result);
 }
+
+void	*ft_exit(t_slack *a)
+{
+	ft_listfree(a->lst);
+	free(a);
+	write(1, "Error\n", 6);
+	return (NULL);
+}
