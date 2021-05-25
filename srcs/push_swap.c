@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:47 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:31:48 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/25 20:03:01 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,12 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 
 int	ft_is_ok(t_slack *a)
 {
-	int		i;
 	t_list	*lst;
 
-	i = -1;
 	lst = a->lst;
-	while (++i < a->size - 1)
+	while (lst->next)
 	{
-		if (lst->content >= lst->next->content)
+		if (lst->content > lst->next->content)
 		{
 			return (1);
 		}
@@ -63,7 +61,7 @@ int	main(int argc, char **arg)
 			sort_500(a, b);
 		else if (a->size > 5)
 			sort_100(a, b);
-		else if (a->size <= 4)
+		else if (a->size == 4 || a->size == 5)
 			sort_5(a, b);
 		else if (a->size == 3)
 			sort_3(a);
