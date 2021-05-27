@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:30:25 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:30:36 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 17:14:04 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 	int		i;
 	t_slack	*a;
 	int		y;
+	long	result;
 
 	a = ft_init_slack(0);
 	i = 0;
@@ -25,7 +26,10 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 		y = -1;
 		while (y++ && arg[i][y] && !ft_isdigit(arg[i][y]))
 			return (ft_exit(a));
-		if (ft_lstadd_back(&a->lst, ft_lstnew(ft_atoi(arg[i]))))
+		result = ft_atoi(arg[i]);
+		if ((result >= 2147483647 || result < -2147483647))
+			return (ft_exit(a));
+		if (ft_lstadd_back(&a->lst, ft_lstnew((int)result)))
 			return (ft_exit(a));
 		a->size++;
 	}
@@ -69,14 +73,12 @@ int	ft_exec_cmd(t_cmd **cmd, t_slack *a, t_slack *b)
 
 void	ft_is_ok(t_slack *a, t_slack *b)
 {
-	int		i;
 	t_list	*lst;
 
-	i = -1;
 	lst = a->lst;
-	while (++i < a->size - 1)
+	while (lst->next)
 	{
-		if (lst->content >= lst->next->content)
+		if (lst->content > lst->next->content)
 		{
 			write(1, "KO\n", 3);
 			return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:34:15 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 20:08:07 by emenella         ###   ########.fr       */
+/*   Updated: 2021/05/27 17:23:04 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ void	sort_500(t_slack *a, t_slack *b)
 	int	size;
 
 	i = -1;
-	size = a->size / 11;
-	while (++i < 11)
+	size = a->size / 10;
+	while (++i < 10)
 	{
 		ret = 1;
 		while (ret)

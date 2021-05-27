@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushswap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:59 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:32:01 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 17:13:15 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	rotate_a_b(t_slack *a, t_slack *b);
 void	reverse_rotate(t_slack *slack);
 void	reverse_rotate_a_b(t_slack *a, t_slack *b);
 t_slack	*ft_init_slack(int size);
-void	print_slack(t_slack *a, t_slack *b);
 void	ft_putchar(char c);
 int		ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstadd_front(t_list **alst, t_list *new);
@@ -58,7 +57,7 @@ int		ft_cmdsize(t_cmd *lst);
 t_cmd	*ft_cmdnew(char *content);
 t_cmd	*ft_cmdlast(t_cmd *lst);
 void	ft_cmdfree(t_cmd *lst);
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 void	ft_putnbr(int n);
 int		get_next_line(char **line);
 void	ft_exec_operation(int operation, t_slack *a, t_slack *b);

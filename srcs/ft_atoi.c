@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:03 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:31:04 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/27 16:37:16 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ void	signjump(int *i, const char *nptr, int *minuscount)
 	}
 }
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	j;
 	int	minuscount;
-	int	result;
+	long	result;
 
 	i = 0;
 	minuscount = 0;
