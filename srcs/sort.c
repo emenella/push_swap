@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:34:15 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/27 17:23:04 by emenella         ###   ########.fr       */
+/*   Updated: 2021/05/28 18:06:55 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	sort_3(t_slack *a)
 
 void	sort_5(t_slack *a, t_slack *b)
 {
-	if (a->size == 5) 
+	if (a->size == 5)
 	{
 		push_min_to_b(a);
 		pb(a, b);
@@ -51,7 +51,7 @@ void	sort_5(t_slack *a, t_slack *b)
 		ra(a);
 		pa(a, b);
 	}
-	if (a->size == 4) 
+	if (a->size == 4)
 	{
 		push_min_to_b(a);
 		pb(a, b);

@@ -1,4 +1,4 @@
-GCC := gcc -Wall -Wextra -Werror -g3 -fsanitize=address
+GCC := gcc -Wall -Wextra -Werror
 SRC := ./srcs/swap.c ./srcs/push.c ./srcs/rotate.c ./srcs/utils.c ./srcs/list.c ./srcs/ft_atoi.c ./srcs/get_next_line.c ./srcs/sort.c ./srcs/reverse_rotate.c ./srcs/lst.c ./srcs/cmd.c
 SRCCHECK := ./srcs/checker.c
 SRCPUSHSWAP := ./srcs/push_swap.c

@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:03 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/27 16:37:16 by emenella         ###   ########.fr       */
+/*   Updated: 2021/05/28 18:07:10 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	signjump(int *i, const char *nptr, int *minuscount)
 
 long	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	j;
-	int	minuscount;
+	int		i;
+	int		j;
+	int		minuscount;
 	long	result;
 
 	i = 0;
