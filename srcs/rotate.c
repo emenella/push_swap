@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:32:18 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:32:19 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/28 15:34:35 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate(t_slack *slack)
 	t_list	*result;
 	t_list	*lst;
 
-	if (slack->size > 0)
+	if (slack->size > 1)
 	{
 		result = slack->lst->next;
 		lst = ft_lstlast(result);

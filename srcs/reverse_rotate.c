@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emenella <emenella@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:32:08 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/25 18:32:26 by emenella         ###   ########lyon.fr   */
+/*   Updated: 2021/05/28 15:34:29 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	reverse_rotate(t_slack *slack)
 	t_list	*last;
 	t_list	*lst;
 
-	if (slack->size > 0)
+	if (slack->size > 1)
 	{
 		lst = slack->lst;
 		last = ft_lstlast(slack->lst);

@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:47 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/27 17:14:14 by emenella         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:29:32 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 	int		y;
 	long	result;
 
+	if (argc == 1)
+		return (NULL);
 	a = ft_init_slack(0);
 	i = 0;
 	while (i++ < argc - 1)
@@ -27,7 +29,7 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 		while (y++ && arg[i][y] && !ft_isdigit(arg[i][y]))
 			return (ft_exit(a));
 		result = ft_atoi(arg[i]);
-		if ((result >= 2147483647 || result < -2147483647))
+		if ((result > 2147483647 || result < -2147483647))
 			return (ft_exit(a));
 		if (ft_lstadd_back(&a->lst, ft_lstnew((int)result)))
 			return (ft_exit(a));
@@ -72,9 +74,9 @@ int	main(int argc, char **arg)
 		else if (a->size == 2)
 			if (a->lst->content > a->lst->next->content)
 				sa(a);
-		ft_listfree(a->lst);
 		ft_listfree(b->lst);
-		free(a);
 		free(b);
+		ft_listfree(a->lst);
+		free(a);
 	}
 }
