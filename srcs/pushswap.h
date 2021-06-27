@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:59 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/27 17:13:15 by emenella         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:45:09 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void	sort_5(t_slack *a, t_slack *b);
 void	sort_100(t_slack *a, t_slack *b);
 void	sort_500(t_slack *a, t_slack *b);
 void	*ft_exit(t_slack *a);
+int		ft_min(t_slack *slack);
 #endif

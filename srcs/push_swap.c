@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:31:47 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/28 15:29:32 by emenella         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:39:48 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,22 @@ t_slack	*ft_arg_to_slack(char **arg, int argc)
 		a->size++;
 	}
 	return (a);
+}
+
+int	ft_min(t_slack *slack)
+{
+	t_list	*lst;
+	int		min;
+
+	lst = slack->lst;
+	min = INT_MAX;
+	while (lst)
+	{
+		if (min > lst->content)
+			min = lst->content;
+		lst = lst->next;
+	}
+	return (min);
 }
 
 int	ft_is_ok(t_slack *a)

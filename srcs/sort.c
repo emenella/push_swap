@@ -6,7 +6,7 @@
 /*   By: emenella <emenella@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 18:34:15 by emenella          #+#    #+#             */
-/*   Updated: 2021/05/28 18:06:55 by emenella         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:44:56 by emenella         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	push_chunk(int chunk, int size, t_slack *a, t_slack *b)
 	int		intervall[2];
 
 	lst = a->lst;
-	intervall[0] = size * chunk;
+	intervall[0] = ft_min(a) + (size * chunk);
 	intervall[1] = intervall[0] + size;
 	element = 0;
 	while (lst)
